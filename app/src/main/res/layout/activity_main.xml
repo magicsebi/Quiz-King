@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:id="@+id/backgroundImage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/backgroundtwo" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <EditText
+                    android:id="@+id/player_name_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_name"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:textColorHint="#FFFFFF"
+                    android:textColor="#FFFFFF"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:padding="8dp"
+                    android:text="@string/welcome"
+                    android:textColor="#ECEFF1"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question1"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <RadioButton
+                            android:id="@+id/radio_kasparov"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@android:color/white"
+                            android:onClick="questionOne"
+                            android:text="@string/kasparov"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="#FFFFFF" />
+
+                        <RadioButton
+                            android:id="@+id/radio_carlsen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@android:color/white"
+                            android:onClick="questionOne"
+                            android:text="@string/carlsen"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="#FFFFFF" />
+
+                        <RadioButton
+                            android:id="@+id/radio_caruana"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@android:color/white"
+                            android:onClick="questionOne"
+                            android:text="@string/caruana"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="#FFFFFF" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/q_one_react"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/correct"
+                        android:textColor="#00FF00"
+                        android:textSize="24sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question2"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <Button
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:onClick="decrement"
+                            android:text="-"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/queen_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:text="0"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:onClick="increment"
+                            android:text="+"
+                            android:textColor="@android:color/black" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/submit_queen_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:onClick="submitQueen"
+                        android:text="Submit"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/q_two_react"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/correct"
+                        android:textColor="#00FF00"
+                        android:textSize="24sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question3"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/chesspuzzleone" />
+
+                    <CheckBox
+                        android:id="@+id/bishop_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@android:color/white"
+                        android:text="@string/answer3_1"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@android:color/white" />
+
+                    <CheckBox
+                        android:id="@+id/pawn_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@android:color/white"
+                        android:text="@string/answer3_2"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@android:color/white" />
+
+                    <CheckBox
+                        android:id="@+id/rook_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@android:color/white"
+                        android:text="@string/answer3_3"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@android:color/white" />
+
+                    <CheckBox
+                        android:id="@+id/queen_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@android:color/white"
+                        android:text="@string/answer3_4"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@android:color/white" />
+
+                    <Button
+                        android:id="@+id/submit_puzzle_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:onClick="submitPuzzle"
+                        android:text="Submit"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/q_three_react"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/correct"
+                        android:textColor="#00FF00"
+                        android:textSize="24sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question4"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/chesspuzzletwo" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/four_radio_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@android:color/white"
+                            android:onClick="questionFour"
+                            android:text="@string/four_yes"
+                            android:textColor="@android:color/white" />
+
+                        <RadioButton
+                            android:id="@+id/four_radio_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@android:color/white"
+                            android:onClick="questionFour"
+                            android:text="@string/four_no"
+                            android:textColor="@android:color/white" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/q_four_react"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/correct"
+                        android:textColor="#00FF00"
+                        android:textSize="24sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question5"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/answer_five_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_question_five"
+                        android:inputType="textCapWords"
+                        android:maxLines="1"
+                        android:textColorHint="#FFFFFF"
+                        android:textColor="@android:color/white"/>
+
+                    <Button
+                        android:id="@+id/submit_five_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:onClick="submitFive"
+                        android:text="Submit"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/q_five_react"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/correct"
+                        android:textColor="#00FF00"
+                        android:textSize="24sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/white" />
+
+                <Button
+                    android:id="@+id/finish_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:onClick="finishQuiz"
+                    android:text="@string/finish"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/goodbye_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:padding="8dp"
+                    android:text="@string/goodbye"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    android:textColor="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/goodbye_message_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:padding="8dp"
+                    android:text="@string/goodbye_1"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    android:textColor="@android:color/white"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="\nSebastian Radu - Feb 2018"
+                    android:textColor="#808080"/>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

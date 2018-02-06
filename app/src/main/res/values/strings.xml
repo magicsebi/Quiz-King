@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Quiz King</string>
+
+    <string name="user_name">What is your name?</string>
+    <string name="welcome">Welcome, fellow chess enthusiast! Let\'s get this easy Chess Quiz started.</string>
+    <string name="question1">1. Who is the current World Champion in classical chess?</string>
+    <string name="question2">2. What is the standard point value of a Queen?</string>
+    <string name="question3">3. Which white piece(s) can capture the black knight?</string>
+    <string name="question4">4. Can white castle in this position?</string>
+    <string name="question5">5. In which country was Magnus Carlsen born?</string>
+
+    <string name="answer3_1">Bishop</string>
+    <string name="answer3_2">Pawn</string>
+    <string name="answer3_3">Rook</string>
+    <string name="answer3_4">Queen</string>
+
+    <string name="hint_question_five">Write just the country</string>
+    <string name="correct">Correct!</string>
+
+    <string name="wrong">Wrong.</string>
+    <string name="wrong_one">Wrong. It\'s Magnus Carlsen.</string>
+    <string name="wrong_two">Wrong. It\'s 9.</string>
+    <string name="wrong_three">Wrong. Careful: the Queen and the Rook can capture.</string>
+    <string name="wrong_four">Wrong. The King would wind up in Check.</string>
+    <string name="wrong_five">Wrong. It\'s Norway.</string>
+
+        <string name="kasparov">Garry Kasparov</string>
+    <string name="carlsen">Magnus Carlsen</string>
+    <string name="caruana">Fabiano Caruana</string>
+
+    <string name="goodbye">Well done, </string>
+    <string name="goodbye_1">Your score was: </string>
+    <string name="goodbye_2">Email your result.</string>
+    <string name="four_yes">Yes.</string>
+    <string name="four_no">No.</string>
+    <string name="finish">Finish quiz.</string>
+
+
+
+</resources>
